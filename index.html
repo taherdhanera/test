@@ -1,1 +1,104 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FunkyFlix</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #141414;
+            color: #fff;
+        }
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(20, 20, 20, 0.9);
+            z-index: 1000;
+        }
+        .logo {
+            color: #e50914;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .nav {
+            display: flex;
+            gap: 15px;
+        }
+        .nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .nav a:hover {
+            color: #e50914;
+        }
+        .hero {
+            margin-top: 80px; /* offset header */
+            height: 500px;
+            background: linear-gradient(135deg, #380000, #141414);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3em;
+            margin: 0;
+            animation: funky 3s infinite;
+        }
+        .cta {
+            margin-top: 20px;
+        }
+        .cta a {
+            background-color: #e50914;
+            padding: 15px 30px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+        .footer {
+            background-color: #141414;
+            padding: 20px;
+            text-align: center;
+        }
+        @keyframes funky {
+            0% { transform: rotate(0deg); color: #fff; }
+            50% { transform: rotate(5deg); color: #e50914; }
+            100% { transform: rotate(0deg); color: #fff; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">FunkyFlix</div>
+        <nav class="nav">
+            <a href="#">Home</a>
+            <a href="#">Movies</a>
+            <a href="#">Series</a>
+            <a href="#">My List</a>
+        </nav>
+    </div>
+    <section class="hero">
+        <div>
+            <h1>Get Funky with Movies!</h1>
+            <div class="cta">
+                <a href="#">Join Now</a>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        &copy; 2023 FunkyFlix. All rights reserved.
+    </footer>
+</body>
+</html>
