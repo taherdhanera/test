@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FunkyFlix</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
             background-color: #141414;
             color: #fff;
+        }
+        h1, h2 {
+            font-family: 'Bangers', cursive;
         }
         .header {
             position: fixed;
@@ -45,7 +49,9 @@
         .hero {
             margin-top: 80px; /* offset header */
             height: 500px;
-            background: linear-gradient(135deg, #380000, #141414);
+            background: linear-gradient(135deg, #380000, #141414, #380000);
+            background-size: 200% 200%;
+            animation: gradientShift 10s ease infinite;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -67,6 +73,40 @@
             font-weight: bold;
             border-radius: 4px;
         }
+        .features {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .features h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .card {
+            background: linear-gradient(135deg, #e50914, #ff6f00);
+            border-radius: 8px;
+            overflow: hidden;
+            width: 200px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card img {
+            width: 100%;
+            display: block;
+        }
+        .card h3 {
+            padding: 10px;
+            margin: 0;
+            font-size: 1.2em;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
         .footer {
             background-color: #141414;
             padding: 20px;
@@ -76,6 +116,25 @@
             0% { transform: rotate(0deg); color: #fff; }
             50% { transform: rotate(5deg); color: #e50914; }
             100% { transform: rotate(0deg); color: #fff; }
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        @media (max-width: 600px) {
+            .hero {
+                height: 300px;
+            }
+            .hero h1 {
+                font-size: 2em;
+            }
+            .features h2 {
+                font-size: 2em;
+            }
+            .card {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -94,6 +153,23 @@
             <h1>Get Funky with Movies!</h1>
             <div class="cta">
                 <a href="#">Join Now</a>
+            </div>
+        </div>
+    </section>
+    <section class="features">
+        <h2>Funky Features</h2>
+        <div class="cards">
+            <div class="card">
+                <img src="https://via.placeholder.com/200x300" alt="Movie 1">
+                <h3>Movie Title 1</h3>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/200x300" alt="Movie 2">
+                <h3>Movie Title 2</h3>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/200x300" alt="Movie 3">
+                <h3>Movie Title 3</h3>
             </div>
         </div>
     </section>
